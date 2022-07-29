@@ -1,0 +1,39 @@
+#root {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .cep-input {
+  margin-top: 95px;
+}
+
+.App .cep-input input {
+    padding: 7px 0;
+    width: 600px;
+    border-radius: 6px;
+    margin-right: 25px;
+}
+
+.App .cep-input button{
+  padding: 10px 45px;
+  border-radius: 6px;
+  background-color:  #4A4BFF;
+  color: #fff;
+  border: none;
+}
+
+.App table{
+  width: 1000px;
+  margin-top: 100px;
+  
+}
+
+.App table,th,td{
+  border: 1px solid #ccc;
+}
