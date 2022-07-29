@@ -34,6 +34,11 @@
   
 }
 
-.App table,th,td{
+.App table th{
+  background-color: #666;
+  color: #fff;
+}
+
+.App  th,td{
   border: 1px solid #ccc;
 }

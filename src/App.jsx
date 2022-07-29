@@ -24,17 +24,14 @@ function App() {
 
   const getCep = () => {
 
-    
     api
       .get(`${cep}/json`)
       .then((response) => setEnderecos([
-        ...enderecos , response.data
+        ...enderecos, response.data
       ]))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
-
-
 
   }
 
@@ -43,13 +40,15 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const cepExiste = enderecos.find((endereco) => numberMask(endereco.cep) === cep);
-    if(!cepExiste){
+    
+    if (!cepExiste) {
       getCep()
     }
-   // console.log(cepExiste, enderecos);
-   setCep('')
-   
+    // console.log(cepExiste, enderecos);
+    setCep('')
+
   }
 
   return (
@@ -58,10 +57,10 @@ function App() {
       <form onSubmit={handleSubmit}>
 
         <div className="cep-input">
-          <input type="text" 
-          value={cep}
-          onChange={(e) => setCep(numberMask(e.target.value))}
-           />
+          <input type="text"
+            value={cep}
+            onChange={(e) => setCep(numberMask(e.target.value))}
+          />
           <button type='submit'>Buscar</button>
         </div>
 
@@ -79,7 +78,7 @@ function App() {
         </thead>
         <tbody>
           {enderecos.map((endereco) => {
-            return(
+            return (
               <tr>
 
                 <td>{endereco.logradouro}</td>
@@ -89,7 +88,7 @@ function App() {
                 <td>{endereco.complemento}</td>
                 <td>{endereco.ddd}</td>
 
-              
+
               </tr>
             )
           })}
